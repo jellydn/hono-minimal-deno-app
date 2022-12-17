@@ -1,11 +1,19 @@
 import { serve } from "http/server.ts";
 import { Hono } from "hono/mod.ts";
-import { cors, etag, logger } from "hono/middleware.ts";
+import { cache, compress, cors, etag, logger } from "hono/middleware.ts";
 
 export const app = new Hono();
 
 // Builtin middleware
-app.use("*", etag(), logger());
+app.use("*", etag(), logger(), compress());
+app.get(
+  "*",
+  cache({
+    cacheName: "hono-deno-app",
+    cacheControl: "max-age=3600",
+    wait: true,
+  }),
+);
 
 // Routing
 app.get("/", (c) => c.html("<h1>Hello Hono!</h1>"));
