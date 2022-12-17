@@ -1,0 +1,9 @@
+{
+  "imports": {
+    "/": "./",
+    "./": "./",
+    "http/": "https://deno.land/std@0.168.0/http/",
+    "hono/": "https://deno.land/x/hono@v2.6.2/",
+    "testing/": "https://deno.land/std@0.167.0/testing/"
+  }
+}
