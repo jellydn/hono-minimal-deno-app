@@ -20,7 +20,6 @@ app.use("*", etag(), logger(), compress());
 app.use("/static/*", serveStatic({ root: "./" }));
 app.use("/favicon.ico", serveStatic({ path: "./favicon.ico" }));
 app.get("/", (c) => c.text("This is Home! You can access: /static/hello.txt"));
-app.get("*", serveStatic({ path: "./static/fallback.txt" }));
 app.notFound((c) => c.json({ message: "Not Found", ok: false }, 404));
 
 // Nested route
