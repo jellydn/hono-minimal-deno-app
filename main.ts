@@ -1,26 +1,20 @@
 import { serve } from "http/server.ts";
 import { Hono } from "hono/mod.ts";
-import {
-  cache,
-  compress,
-  cors,
-  etag,
-  logger,
-  serveStatic,
-} from "hono/middleware.ts";
+import { compress, cors, etag, logger, serveStatic } from "hono/middleware.ts";
 
 export const app = new Hono();
 
 // Builtin middleware
 app.use("*", etag(), logger(), compress());
-app.get(
-  "*",
-  cache({
-    cacheName: "hono-deno-app",
-    cacheControl: "max-age=3600",
-    wait: true,
-  }),
-);
+// TODO: uncomment this when this is resolved https://github.com/honojs/hono/issues/698
+// app.get(
+//   "*",
+//   cache({
+//     cacheName: "hono-deno-app",
+//     cacheControl: "max-age=3600",
+//     wait: true,
+//   }),
+// );
 
 // Routing
 app.use("/static/*", serveStatic({ root: "./" }));
