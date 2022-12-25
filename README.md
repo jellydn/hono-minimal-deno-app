@@ -2,6 +2,8 @@
 
 This is a minimal project with [Hono](https://github.com/honojs/hono/) for Deno
 
+[![IT Man - Tech #30 - Deno 101 - The best developer experience [Vietnamese]](https://i.ytimg.com/vi/ocLNcwm4xUs/hqdefault.jpg)](https://www.youtube.com/watch?v=ocLNcwm4xUs)
+
 [![ITMan - Tech #25 - Ultrafast web framework for Cloudflare Workers, Deno, and Bun [Vietnamese]](https://i.ytimg.com/vi/YsjqVvlrXGY/hqdefault.jpg)](https://www.youtube.com/watch?v=YsjqVvlrXGY)
 
 ## Features
